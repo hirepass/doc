@@ -62,7 +62,7 @@
                         ]
                     },
                     {
-                        "group": "RESULS",
+                        "group": "RESULTS",
                         "pages": [
                             "results/managing-results",
                             "results/fetch-all-results-at-once",
@@ -74,12 +74,23 @@
                                     "results/address",
                                     "results/criminal",
                                     "results/financial",
-                                    "results/directorships",
+                                    {
+                                      "group": "Directorships",
+                                      "pages": [
+                                        "results/directorships-uk"
+                                      ]
+                                    },
                                     "results/global-sanctions",
                                     "results/financial-conduct-authority-registry",
-                                    "results/social-media-footprint",
-                                    "results/employment-and-professional-history",
-                                    "results/professional-cerification",
+                                    "results/social-media-footprint",{
+                                      "group": "Directorships",
+                                      "pages": [
+                                        "results/employment-and-professional-history-reference",
+                                        "results/employment-and-professional-history-fca"
+                                        
+                                      ]
+                                    },
+                                    "results/professional-certification",
                                     "results/onboarding-form"
                                 ]
                             }

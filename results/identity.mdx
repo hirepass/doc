@@ -1,0 +1,229 @@
+---
+title: "Identity"
+description: "The most popular check element, digitally verifies the applicant’s identity and authentication of their documents."
+---
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+    query FetchCheckRequest {
+        fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+            identity {
+                list {
+                    passportNumber
+                    passportCountryId
+                    passportIssueDate
+                    passportExpiryDate
+                    passportFileId
+                    nationalIdentityCardNumber
+                    nationalIdentityCardCountryId
+                    nationalIdentityCardIssueDate
+                    nationalIdentityCardExpiryDate
+                    nationalIdentityCardFileId
+                    drivingLicenceNumber
+                    drivingLicenceCountryId
+                    drivingLicenceIssueDate
+                    drivingLicenceExpiryDate
+                    drivingLicenceFileId
+                    globalAuth
+                    globalIdsp
+                    globalLevel
+                    globalPolicy
+                    globalProfile
+                    passportFile
+                    nationalIdentityCardFile
+                    drivingLicenceFile
+                }
+                files {
+                    name
+                    uri
+                    size
+                    mime
+                }
+            }
+        }
+    }
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```
+    curl -X POST \
+         -H "Content-Type: application/json" \
+         -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+         -d '{
+           "query": "query FetchCheckRequest { 
+             fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) { 
+               identity { 
+                 list { 
+                   passportNumber 
+                   passportCountryId 
+                   passportIssueDate 
+                   passportExpiryDate 
+                   passportFileId 
+                   nationalIdentityCardNumber 
+                   nationalIdentityCardCountryId 
+                   nationalIdentityCardIssueDate 
+                   nationalIdentityCardExpiryDate 
+                   nationalIdentityCardFileId 
+                   drivingLicenceNumber 
+                   drivingLicenceCountryId 
+                   drivingLicenceIssueDate 
+                   drivingLicenceExpiryDate 
+                   drivingLicenceFileId 
+                   globalAuth 
+                   globalIdsp 
+                   globalLevel 
+                   globalPolicy 
+                   globalProfile 
+                   passportFile 
+                   nationalIdentityCardFile 
+                   drivingLicenceFile 
+                 } 
+                 files { 
+                   name 
+                   uri 
+                   size 
+                   mime 
+                 } 
+               } 
+             } 
+           }"
+         }' \
+         https://api.hirepassconst fetchData = async () => {
+      try {
+        const response = await fetch("https://api.sourcecompliant.com/applicant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+          },
+          body: JSON.stringify({
+            query: `
+              query FetchCheckRequest {
+                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                  identity {
+                    list {
+                      passportNumber
+                      passportCountryId
+                      passportIssueDate
+                      passportExpiryDate
+                      passportFileId
+                      nationalIdentityCardNumber
+                      nationalIdentityCardCountryId
+                      nationalIdentityCardIssueDate
+                      nationalIdentityCardExpiryDate
+                      nationalIdentityCardFileId
+                      drivingLicenceNumber
+                      drivingLicenceCountryId
+                      drivingLicenceIssueDate
+                      drivingLicenceExpiryDate
+                      drivingLicenceFileId
+                      globalAuth
+                      globalIdsp
+                      globalLevel
+                      globalPolicy
+                      globalProfile
+                      passportFile
+                      nationalIdentityCardFile
+                      drivingLicenceFile
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                }
+              }
+            `,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("Response data:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
+    // Call the function
+    fetchData();
+    .com/applicant
+    
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```javascript
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.hirepass.com/applicant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+          },
+          body: JSON.stringify({
+            query: `
+              query FetchCheckRequest {
+                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                  identity {
+                    list {
+                      passportNumber
+                      passportCountryId
+                      passportIssueDate
+                      passportExpiryDate
+                      passportFileId
+                      nationalIdentityCardNumber
+                      nationalIdentityCardCountryId
+                      nationalIdentityCardIssueDate
+                      nationalIdentityCardExpiryDate
+                      nationalIdentityCardFileId
+                      drivingLicenceNumber
+                      drivingLicenceCountryId
+                      drivingLicenceIssueDate
+                      drivingLicenceExpiryDate
+                      drivingLicenceFileId
+                      globalAuth
+                      globalIdsp
+                      globalLevel
+                      globalPolicy
+                      globalProfile
+                      passportFile
+                      nationalIdentityCardFile
+                      drivingLicenceFile
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                }
+              }
+            `,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("Response data:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
+    // Call the function
+    fetchData();
+    
+    ```
+  </Tab>
+</Tabs>

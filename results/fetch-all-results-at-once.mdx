@@ -1,0 +1,800 @@
+---
+title: "Fetch all results at once"
+---
+
+A simple way to manage compliance for different types of roles. Instead of figuring out which check elements you need every time, a package bundles the appropriate level of results into one request.
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+    query FetchAllResultsAtOnce {
+                buildCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                  identity {
+                    list {
+                      passportNumber
+                      passportCountryId
+                      passportIssueDate
+                      passportExpiryDate
+                      passportFileId
+                      nationalIdentityCardNumber
+                      nationalIdentityCardCountryId
+                      nationalIdentityCardIssueDate
+                      nationalIdentityCardExpiryDate
+                      nationalIdentityCardFileId
+                      drivingLicenceNumber
+                      drivingLicenceCountryId
+                      drivingLicenceIssueDate
+                      drivingLicenceExpiryDate
+                      drivingLicenceFileId
+                      globalAuth
+                      globalIdsp
+                      globalLevel
+                      globalPolicy
+                      globalProfile
+                      passportFile
+                      nationalIdentityCardFile
+                      drivingLicenceFile
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                  rightToWork {
+                    list {
+                      countryOfWorkId
+                      visaRequired
+                      ukShareCodeNumber
+                      ukShareCodeCompany
+                      ukShareCodeAuthReference
+                      ukShareCodeAuthDate
+                      ukShareCodeAuthFileId
+                      globalAuth
+                      globalIdsp
+                      globalLevel
+                      globalPolicy
+                      globalProfile
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                  addressHistory {
+                    list {
+                      countryId
+                      address1
+                      address2
+                      address3
+                      buildingNumber
+                      street
+                      summary
+                      city
+                      postCode
+                      fromDate
+                      toDate
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  criminalChecks {
+                    list {
+                      disclosedHistory
+                      supportingComment
+                      countryId
+                      ukDisclosureAndBarringServiceType
+                      ukDisclosureAndBarringServiceNumber
+                      ukDisclosureAndBarringServiceEResult
+                      certificateIssueDate
+                      certificateFileId
+                      findings
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  financialChecks {
+                    list {
+                      countryId
+                      disclosedHistory
+                      supportingComment
+                      facingInsolvency
+                      numberOfInsolvenciesLast6Years
+                      numberOfSatisfiedCountyCourtJudgments
+                      numberOfActiveCountyCourtJudgments
+                      totalValueOfActiveCountyCourtJudgments
+                      findingsType
+                      number
+                      court
+                      value
+                      judgmentDate
+                      satisfiedDate
+                      noticesOfCorrection
+                      noticesOfDispute
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  directorships {
+                    list {
+                      countryId
+                      companyName
+                      companyStatus
+                      companyRegistrationNumber
+                      companyRegistrationDate
+                      companyRegisteredAddress
+                      position
+                      appointmentDate
+                      resignationDate
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  globalSanctions {
+                    list {
+                      primaryCountryId
+                      category
+                      name
+                      position
+                      level
+                      sources
+                      remarks
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  ukFcaRegistries {
+                    list {
+                      fileId
+                      remarks
+                    }
+                  }
+                  employmentHistory {
+                    list {
+                      status
+                      companyName
+                      jobTitle
+                      agencyName
+                      occupation
+                      fromDate
+                      toDate
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                  educationHistory {
+                    list {
+                      id
+                      requestId
+                      applicantId
+                      countryOfStudyId
+                      referenceId
+                      providedByApplicant
+                      status
+                      institution
+                      qualificationLevel
+                      courseTitle
+                      fromDate
+                      toDate
+                      awarded
+                      awardDate
+                      finalGrade
+                      exclusiveHEDDPartner
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  professionalCertification {
+                    list {
+                      institution
+                      qualificationLevel
+                      courseTitle
+                      fromDate
+                      toDate
+                      awarded
+                      awardDate
+                      finalGrade
+                      exclusiveHEDDPartner
+                    }
+                    files {
+                      name
+                      mime
+                      size
+                      uri
+                    }
+                  }
+                  formQuestions {
+                    order
+                    uuid
+                    type
+                    label
+                    answer
+                    isFromProfessionalForm
+                    comment
+                    files {
+                      name
+                      mime
+                      size
+                      uri
+                    }
+                  }
+                }
+              }
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+      -d '{
+        "query": "
+          query FetchAllResultsAtOnce {
+            buildCheckRequest(where: { externalId: \"SCEXAMPLE\" }) {
+              identity {
+                list {
+                  passportNumber
+                  passportCountryId
+                  passportIssueDate
+                  passportExpiryDate
+                  passportFileId
+                  nationalIdentityCardNumber
+                  nationalIdentityCardCountryId
+                  nationalIdentityCardIssueDate
+                  nationalIdentityCardExpiryDate
+                  nationalIdentityCardFileId
+                  drivingLicenceNumber
+                  drivingLicenceCountryId
+                  drivingLicenceIssueDate
+                  drivingLicenceExpiryDate
+                  drivingLicenceFileId
+                  globalAuth
+                  globalIdsp
+                  globalLevel
+                  globalPolicy
+                  globalProfile
+                  passportFile
+                  nationalIdentityCardFile
+                  drivingLicenceFile
+                }
+                files {
+                  name
+                  uri
+                  size
+                  mime
+                }
+              }
+              rightToWork {
+                list {
+                  countryOfWorkId
+                  visaRequired
+                  ukShareCodeNumber
+                  ukShareCodeCompany
+                  ukShareCodeAuthReference
+                  ukShareCodeAuthDate
+                  ukShareCodeAuthFileId
+                  globalAuth
+                  globalIdsp
+                  globalLevel
+                  globalPolicy
+                  globalProfile
+                }
+                files {
+                  name
+                  uri
+                  size
+                  mime
+                }
+              }
+              addressHistory {
+                list {
+                  countryId
+                  address1
+                  address2
+                  address3
+                  buildingNumber
+                  street
+                  summary
+                  city
+                  postCode
+                  fromDate
+                  toDate
+                }
+                files {
+                  uri
+                  mime
+                  name
+                  size
+                  allow
+                }
+              }
+              criminalChecks {
+                list {
+                  disclosedHistory
+                  supportingComment
+                  countryId
+                  ukDisclosureAndBarringServiceType
+                  ukDisclosureAndBarringServiceNumber
+                  ukDisclosureAndBarringServiceEResult
+                  certificateIssueDate
+                  certificateFileId
+                  findings
+                }
+                files {
+                  uri
+                  mime
+                  name
+                  size
+                  allow
+                }
+              }
+              financialChecks {
+                list {
+                  countryId
+                  disclosedHistory
+                  supportingComment
+                  facingInsolvency
+                  numberOfInsolvenciesLast6Years
+                  numberOfSatisfiedCountyCourtJudgments
+                  numberOfActiveCountyCourtJudgments
+                  totalValueOfActiveCountyCourtJudgments
+                  findingsType
+                  number
+                  court
+                  value
+                  judgmentDate
+                  satisfiedDate
+                  noticesOfCorrection
+                  noticesOfDispute
+                }
+                files {
+                  uri
+                  mime
+                  name
+                  size
+                  allow
+                }
+              }
+              directorships {
+                list {
+                  countryId
+                  companyName
+                  companyStatus
+                  companyRegistrationNumber
+                  companyRegistrationDate
+                  companyRegisteredAddress
+                  position
+                  appointmentDate
+                  resignationDate
+                }
+                files {
+                  uri
+                  mime
+                  name
+                  size
+                  allow
+                }
+              }
+              globalSanctions {
+                list {
+                  primaryCountryId
+                  category
+                  name
+                  position
+                  level
+                  sources
+                  remarks
+                }
+                files {
+                  uri
+                  mime
+                  name
+                  size
+                  allow
+                }
+              }
+              ukFcaRegistries {
+                list {
+                  fileId
+                  remarks
+                }
+              }
+              employmentHistory {
+                list {
+                  status
+                  companyName
+                  jobTitle
+                  agencyName
+                  occupation
+                  fromDate
+                  toDate
+                }
+                files {
+                  name
+                  uri
+                  size
+                  mime
+                }
+              }
+              educationHistory {
+                list {
+                  id
+                  requestId
+                  applicantId
+                  countryOfStudyId
+                  referenceId
+                  providedByApplicant
+                  status
+                  institution
+                  qualificationLevel
+                  courseTitle
+                  fromDate
+                  toDate
+                  awarded
+                  awardDate
+                  finalGrade
+                  exclusiveHEDDPartner
+                }
+                files {
+                  uri
+                  mime
+                  name
+                  size
+                  allow
+                }
+              }
+              professionalCertification {
+                list {
+                  institution
+                  qualificationLevel
+                  courseTitle
+                  fromDate
+                  toDate
+                  awarded
+                  awardDate
+                  finalGrade
+                  exclusiveHEDDPartner
+                }
+                files {
+                  name
+                  mime
+                  size
+                  uri
+                }
+              }
+              formQuestions {
+                order
+                uuid
+                type
+                label
+                answer
+                isFromProfessionalForm
+                comment
+                files {
+                  name
+                  mime
+                  size
+                  url
+    ...
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```javascript
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.hirepass.com/applicant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+          },
+          body: JSON.stringify({
+            query: `
+              query FetchAllResultsAtOnce {
+                buildCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                  identity {
+                    list {
+                      passportNumber
+                      passportCountryId
+                      passportIssueDate
+                      passportExpiryDate
+                      passportFileId
+                      nationalIdentityCardNumber
+                      nationalIdentityCardCountryId
+                      nationalIdentityCardIssueDate
+                      nationalIdentityCardExpiryDate
+                      nationalIdentityCardFileId
+                      drivingLicenceNumber
+                      drivingLicenceCountryId
+                      drivingLicenceIssueDate
+                      drivingLicenceExpiryDate
+                      drivingLicenceFileId
+                      globalAuth
+                      globalIdsp
+                      globalLevel
+                      globalPolicy
+                      globalProfile
+                      passportFile
+                      nationalIdentityCardFile
+                      drivingLicenceFile
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                  rightToWork {
+                    list {
+                      countryOfWorkId
+                      visaRequired
+                      ukShareCodeNumber
+                      ukShareCodeCompany
+                      ukShareCodeAuthReference
+                      ukShareCodeAuthDate
+                      ukShareCodeAuthFileId
+                      globalAuth
+                      globalIdsp
+                      globalLevel
+                      globalPolicy
+                      globalProfile
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                  addressHistory {
+                    list {
+                      countryId
+                      address1
+                      address2
+                      address3
+                      buildingNumber
+                      street
+                      summary
+                      city
+                      postCode
+                      fromDate
+                      toDate
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  criminalChecks {
+                    list {
+                      disclosedHistory
+                      supportingComment
+                      countryId
+                      ukDisclosureAndBarringServiceType
+                      ukDisclosureAndBarringServiceNumber
+                      ukDisclosureAndBarringServiceEResult
+                      certificateIssueDate
+                      certificateFileId
+                      findings
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  financialChecks {
+                    list {
+                      countryId
+                      disclosedHistory
+                      supportingComment
+                      facingInsolvency
+                      numberOfInsolvenciesLast6Years
+                      numberOfSatisfiedCountyCourtJudgments
+                      numberOfActiveCountyCourtJudgments
+                      totalValueOfActiveCountyCourtJudgments
+                      findingsType
+                      number
+                      court
+                      value
+                      judgmentDate
+                      satisfiedDate
+                      noticesOfCorrection
+                      noticesOfDispute
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  directorships {
+                    list {
+                      countryId
+                      companyName
+                      companyStatus
+                      companyRegistrationNumber
+                      companyRegistrationDate
+                      companyRegisteredAddress
+                      position
+                      appointmentDate
+                      resignationDate
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  globalSanctions {
+                    list {
+                      primaryCountryId
+                      category
+                      name
+                      position
+                      level
+                      sources
+                      remarks
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  ukFcaRegistries {
+                    list {
+                      fileId
+                      remarks
+                    }
+                  }
+                  employmentHistory {
+                    list {
+                      status
+                      companyName
+                      jobTitle
+                      agencyName
+                      occupation
+                      fromDate
+                      toDate
+                    }
+                    files {
+                      name
+                      uri
+                      size
+                      mime
+                    }
+                  }
+                  educationHistory {
+                    list {
+                      id
+                      requestId
+                      applicantId
+                      countryOfStudyId
+                      referenceId
+                      providedByApplicant
+                      status
+                      institution
+                      qualificationLevel
+                      courseTitle
+                      fromDate
+                      toDate
+                      awarded
+                      awardDate
+                      finalGrade
+                      exclusiveHEDDPartner
+                    }
+                    files {
+                      uri
+                      mime
+                      name
+                      size
+                      allow
+                    }
+                  }
+                  professionalCertification {
+                    list {
+                      institution
+                      qualificationLevel
+                      courseTitle
+                      fromDate
+                      toDate
+                      awarded
+                      awardDate
+                      finalGrade
+                      exclusiveHEDDPartner
+                    }
+                    files {
+                      name
+                      mime
+                      size
+                      uri
+                    }
+                  }
+                  formQuestions {
+                    order
+                    uuid
+                    type
+                    label
+                    answer
+                    isFromProfessionalForm
+                    comment
+                    files {
+                      name
+                      mime
+                      size
+                      uri
+                    }
+                  }
+                }
+              }
+            `,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("Response data:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
+    // Call the function
+    fetchData();
+    
+    ```
+  </Tab>
+</Tabs>

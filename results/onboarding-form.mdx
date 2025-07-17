@@ -1,0 +1,110 @@
+---
+title: "Onboarding form"
+description: "A simple way to consolidate your onboarding process and request information that is unique to your organisation. This section is overseen by your HR team and displayed on the applicant’s profile."
+---
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+    query FetchCheckRequest {
+    fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+        formQuestions {
+            order
+            uuid
+            type
+            label
+            answer
+            isFromProfessionalForm
+            comment
+            files {
+                name
+                mime
+                size
+                uri
+            }
+        }
+    }
+    }
+    
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+     -d '{
+       "query": "query FetchCheckRequest { 
+         fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) { 
+           formQuestions { 
+             order 
+             uuid 
+             type 
+             label 
+             answer 
+             isFromProfessionalForm 
+             comment 
+             files { 
+               name 
+               mime 
+               size 
+               uri 
+             } 
+           } 
+         } 
+       }"
+     }' \
+     https://api.sourcecompliant.com/applicant
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```javascript
+    const fetchData = async () => {
+    try {
+    const response = await fetch("https://api.sourcecompliant.com/applicant", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+      },
+      body: JSON.stringify({
+        query: `
+          query FetchCheckRequest {
+            fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+              formQuestions {
+                order
+                uuid
+                type
+                label
+                answer
+                isFromProfessionalForm
+                comment
+                files {
+                  name
+                  mime
+                  size
+                  uri
+                }
+              }
+            }
+          }
+        `,
+      }),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log("Response data:", data);
+    } catch (error) {
+    console.error("Error:", error);
+    }
+    };
+    
+    // Call the function
+    fetchData();
+    ```
+  </Tab>
+</Tabs>
