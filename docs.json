@@ -3,9 +3,9 @@
     "theme": "willow",
     "name": "HirePass",
     "colors": {
-        "primary": "#0F0F0F",
-        "light": "#0F0F0F",
-        "dark": "#FFFFFF"
+        "primary": "#2DC000",
+        "light": "#FFFFFF",
+        "dark": "#0F0F0F"
     },
     "favicon": "/favicon.ico",
     "navigation": {
@@ -13,7 +13,7 @@
             {
                 "tab": "Documentation",
                 "groups": [
-                      {
+                    {
                         "group": "GET STARTED",
                         "pages": [
                             "introduction"
@@ -38,6 +38,51 @@
                         "pages": [
                             "webhooks/working-with-webhooks",
                             "webhooks/create-a-new-webhook"
+                        ]
+                    },
+                    {
+                        "group": "REQUESTS",
+                        "pages": [
+                            {
+                                "group": "Check packages",
+                                "pages": [
+                                    "requests/view-all-check-packages",
+                                    "requests/create-a-new-check-package"
+                                ]
+                            },
+                            {
+                                "group": "Managing requests",
+                                "pages": [
+                                    "requests/create-a-request",
+                                    "requests/re-send-a-request",
+                                    "requests/cancel-a-request",
+                                    "requests/view-all-requests"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "RESULS",
+                        "pages": [
+                            "results/managing-results",
+                            "results/fetch-all-results-at-once",
+                            {
+                                "group": "Fetch results by individual elements",
+                                "pages": [
+                                    "results/identity",
+                                    "results/right-to-work",
+                                    "results/address",
+                                    "results/criminal",
+                                    "results/financial",
+                                    "results/directorships",
+                                    "results/global-sanctions",
+                                    "results/financial-conduct-authority-registry",
+                                    "results/social-media-footprint",
+                                    "results/employment-and-professional-history",
+                                    "results/professional-cerification",
+                                    "results/onboarding-form"
+                                ]
+                            }
                         ]
                     }
                 ]
