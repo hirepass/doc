@@ -12,8 +12,8 @@ Each onboarding form is uniquely encrypted and tailored to the applicant, adapti
 
 1. **checkPackageUuid**(required): Specifies the check package to be used for the request.
 2. **applicantComment** (optional): Provides guidance and supporting comments to the Applicant.
-3. \*\*firstName \*\*(required) / **middleName** (optional) / \*\*surname \*\*(required): The applicant's name, separated into three main components.
-4. \*\*email \*\*(required): The applicant's contact email, where the request notification will be sent.
+3. **firstName** (required) / **middleName** (optional) / **surname** (required): The applicant's name, separated into three main components.
+4. **email** (required): The applicant's contact email, where the request notification will be sent.
 
 <Tabs>
   <Tab title="GraphQL">
@@ -145,7 +145,7 @@ Each onboarding form is uniquely encrypted and tailored to the applicant, adapti
 #### For packages containing a "Standard DBS" element (UK criminal check restricted to certain roles), the following additional fiends will also apply:
 
 1. **isANewHire** (required): If the applicant is a brand-new hire at your organisation.
-2. \*\*isApplyingForADifferentRole \*\*(required): If the applicant is a current employee of your organisation applying for a different role.
+2. **isApplyingForADifferentRole** (required): If the applicant is a current employee of your organisation applying for a different role.
 3. **isExistingRoleReCheck** (required): If the applicant is a current employee of your organisation undergoing a DBS re-check while in their current position.
 
 #### For packages containing a "Enhanced DBS" element (UK criminal check restricted to certain roles), the following additional fiends will also apply:
