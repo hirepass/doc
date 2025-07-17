@@ -3,9 +3,9 @@
     "theme": "willow",
     "name": "HirePass",
     "colors": {
-        "primary": "#2DC000",
-        "light": "#2DC000",
-        "dark": "#2DC000"
+        "primary": "#0F0F0F",
+        "light": "#0F0F0F",
+        "dark": "#FFFFFF"
     },
     "favicon": "/favicon.ico",
     "navigation": {
@@ -14,7 +14,6 @@
                 "tab": "Documentation",
                 "groups": [
                       {
-                        "group": "INTRODUCTION",
                         "pages": [
                             "introduction"
                         ]
@@ -23,7 +22,7 @@
                         "group": "ENVIRONMENTS",
                         "pages": [
                             "environments/stage",
-                            "environments/producion"
+                            "environments/production"
                         ]
                     },
                     {

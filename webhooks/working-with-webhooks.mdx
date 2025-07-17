@@ -1,0 +1,43 @@
+---
+title: "Working with webhooks"
+description: "If you’re unfamiliar with webhooks, this guide will walk you through the essentials."
+---
+
+### What are webhooks?
+
+When important changes happen, like new requests or status updates, HirePass sends notifications to a web address you choose. This means you don't need to keep checking the system manually.
+
+### Why use webhooks?
+
+- **Instant updates**: Get notified the moment something changes.
+- **Automation**: Trigger workflows automatically when new data arrives.
+- **Efficiency**: Stop polling for updates; let the information come to you.
+
+### How webhooks **queries work** (a quick primer):
+
+When a new request submission or a status change, webhooks send a notification to the web address you’ve configured. These notifications are `HTTP POST` requests that contain data about the event, allowing your systems to react automatically.
+
+#### Example use cases:
+
+- **New requests**: Automatically receive new applicant or data requests to keep your systems up-to-date.
+- **Status updates**: Get notified when the status of an application changes, allowing your team to take immediate action.
+- **Automated workflows**: Trigger internal workflows whenever a specific event occurs, such as sending an email or updating a database.
+
+### Understanding webhook notifications:
+
+Webhook notifications are sent as JSON payloads to your specified URL. These payloads contain all the relevant details of the event that triggered them, allowing you to integrate seamlessly with your existing systems.
+
+**Example**
+
+```
+//
+```
+
+**In this example:**
+
+- The `event` field tells you what kind of update occurred, in this case, a status update.
+- The `data` object contains specific details about the event, including the externalD, the new status, and the applicant's personal data.
+
+## Try it yourself.
+
+Head over to [Create a new webhook](/o/JYWEf8noJAYpEY9XONdS/s/XqNcncLPbRfoQWzDqCVx/~/changes/8/webhooks/create-a-new-webhook)\! You’ll find that integrating webhooks into your workflow not only saves time but also keeps your team informed and proactive.

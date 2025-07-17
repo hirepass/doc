@@ -1,0 +1,41 @@
+---
+title: "Create a new webhook"
+description: "When important changes happen, like new requests or status updates, Source Compliant sends notifications to a web address you choose. This means you don't need to keep checking the system manually."
+---
+
+### Obtaining your HirePass webhooks key:
+
+1. Log in to your [HirePass](https://workspace.hirepass.com) account.
+2. Navigate to the **Integrations** section.
+3. Select **Webhooks** from the menu.
+4. Create a New webhook key:
+   - **Events: **Select the events that the webhook will start listening to. These events act as triggers to send requests to the webhook.
+   - **Label**: Enter a label for your webhook. This can be anything that helps you identify the webhook's purpose, such as “Status updates” or “Package notifications.”
+   - **URL**: Enter the URL of the endpoint where you want to receive the webhook requests. Make sure the URL is correctly formatted and accessible.
+   - **Token:** The authentication key is an optional field that can be generated on the webhook origin side. It will then be sent within the request as an Authorization Bearer Token.
+   - Click **Create new webhook**.
+
+![https___content.gitbook.com_content_XqNcncLPbRfoQWzDqCVx_blobs_RQSwcfKx1CIp1NrNRm9y_Screenshot_202024-12-17_20at_2017.13.53.avif](/images/https___content.gitbook.com_content_XqNcncLPbRfoQWzDqCVx_blobs_RQSwcfKx1CIp1NrNRm9y_Screenshot_202024-12-17_20at_2017.13.53.avif)
+
+### Using the webhook key:
+
+The webhook key will be included in the `Authorization` header of each request sent to your endpoint. You will need to implement validation logic on your server to verify the authenticity of each incoming request using this key.
+
+### Testing the webhook connection:
+
+After completing the setup, test your webhook endpoint. This will ensure you're properly receiving the data from Source Compliant. To test the webhook connection, click on "Test connection", and a placeholder test will be sent to your URL.
+
+![https___content.gitbook.com_content_XqNcncLPbRfoQWzDqCVx_blobs_ovjU1tkqjbo5yojeuvUf_Screenshot_202024-12-17_20at_2017.14.14.avif](/images/https___content.gitbook.com_content_XqNcncLPbRfoQWzDqCVx_blobs_ovjU1tkqjbo5yojeuvUf_Screenshot_202024-12-17_20at_2017.14.14.avif)
+
+#### Understanding the feedbacks
+
+- **Connecting**: Attempting to reach the webhook endpoint.
+- **Success**: The endpoint was successfully reached and received the test data.
+- **Error**: An issue occurred during the connection.
+- **Disconnected**: Acess to this webhook has been revoked.
+
+### Security reminder.
+
+- **Use HTTPS**: Make sure your webhook URL uses HTTPS to keep data secure during transmission.
+- **Keep you key secure**: Do not share this key publicly or expose it in your code repositories.
+- **Rotate keys regularly**: Regularly rotate your key to enhance security and update your validation logic accordingly.
