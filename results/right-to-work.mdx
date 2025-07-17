@@ -42,7 +42,7 @@ description: "A government certified verification, it ensures legal compliance a
          -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
          -d '{
            "query": "query FetchCheckRequest { 
-             fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) { 
+             fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) { 
                rightToWork { 
                  list { 
                    countryOfWorkId 
@@ -85,7 +85,7 @@ description: "A government certified verification, it ensures legal compliance a
           body: JSON.stringify({
             query: `
               query FetchCheckRequest {
-                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   rightToWork {
                     list {
                       countryOfWorkId

@@ -8,7 +8,7 @@ A simple way to manage compliance for different types of roles. Instead of figur
   <Tab title="GraphQL">
     ```
     query FetchAllResultsAtOnce {
-                buildCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                buildCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   identity {
                     list {
                       passportNumber
@@ -267,7 +267,7 @@ A simple way to manage compliance for different types of roles. Instead of figur
       -d '{
         "query": "
           query FetchAllResultsAtOnce {
-            buildCheckRequest(where: { externalId: \"SCEXAMPLE\" }) {
+            buildCheckRequest(where: { externalId: \"HPEXAMPLE\" }) {
               identity {
                 list {
                   passportNumber
@@ -528,7 +528,7 @@ A simple way to manage compliance for different types of roles. Instead of figur
           body: JSON.stringify({
             query: `
               query FetchAllResultsAtOnce {
-                buildCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                buildCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   identity {
                     list {
                       passportNumber

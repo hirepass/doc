@@ -7,7 +7,7 @@ description: "Restricted to professionals holding a Financial Conduct Authority 
   <Tab title="GraphQL">
     ```
     query FetchCheckRequest {
-    fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+    fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
         employmentHistory {
             list {
                 status
@@ -37,7 +37,7 @@ description: "Restricted to professionals holding a Financial Conduct Authority 
      -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
      -d '{
        "query": "query FetchCheckRequest { 
-         fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) { 
+         fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) { 
            employmentHistory { 
              list { 
                status 
@@ -58,7 +58,7 @@ description: "Restricted to professionals holding a Financial Conduct Authority 
          } 
        }"
      }' \
-     https://api.sourcecompliant.com/applicant
+     https://api.hirepass.com/applicant
     
     ```
   </Tab>
@@ -66,7 +66,7 @@ description: "Restricted to professionals holding a Financial Conduct Authority 
     ```javascript
     const fetchData = async () => {
     try {
-    const response = await fetch("https://api.sourcecompliant.com/applicant", {
+    const response = await fetch("https://api.hirepass.com/applicant", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ description: "Restricted to professionals holding a Financial Conduct Authority 
       body: JSON.stringify({
         query: `
           query FetchCheckRequest {
-            fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+            fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
               employmentHistory {
                 list {
                   status

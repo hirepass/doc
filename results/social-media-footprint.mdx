@@ -11,7 +11,7 @@ description: "An AI-powered search supported by human review, used to detect neg
          -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
          -d '{
            "query": "query FetchCheckRequest {
-              fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) {
+              fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) {
                 socialMediaFindings {
                   aiSentimentAnalisys
                   list {
@@ -25,7 +25,7 @@ description: "An AI-powered search supported by human review, used to detect neg
               }
            }"
          }' \
-         https://api.sourcecompliant.com/applicant
+         https://api.hirepass.com/applicant
     
     ```
   </Tab>
@@ -36,7 +36,7 @@ description: "An AI-powered search supported by human review, used to detect neg
          -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
          -d '{
            "query": "query FetchCheckRequest {
-              fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) {
+              fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) {
                 socialMediaFindings {
                   aiSentimentAnalisys
                   list {
@@ -50,7 +50,7 @@ description: "An AI-powered search supported by human review, used to detect neg
               }
            }"
          }' \
-         https://api.sourcecompliant.com/applicant
+         https://api.hirepass.com/applicant
     
     ```
   </Tab>
@@ -58,7 +58,7 @@ description: "An AI-powered search supported by human review, used to detect neg
     ```javascript
     const fetchSocialMediaFindings = async () => {
       try {
-        const response = await fetch("https://api.sourcecompliant.com/applicant", {
+        const response = await fetch("https://api.hirepass.com/applicant", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -67,7 +67,7 @@ description: "An AI-powered search supported by human review, used to detect neg
           body: JSON.stringify({
             query: `
               query FetchCheckRequest {
-                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   socialMediaFindings {
                     aiSentimentAnalisys
                     list {

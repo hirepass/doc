@@ -7,7 +7,7 @@ description: "An essential element for many check types, confirming the address
   <Tab title="GraphQL">
     ```
     query FetchCheckRequest {
-    fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+    fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
         addressHistory {
             list {
                 countryId
@@ -83,7 +83,7 @@ description: "An essential element for many check types, confirming the address
           body: JSON.stringify({
             query: `
               query FetchCheckRequest {
-                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   addressHistory {
                     list {
                       countryId

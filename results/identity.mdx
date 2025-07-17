@@ -7,7 +7,7 @@ description: "The most popular check element, digitally verifies the applicantâ€
   <Tab title="GraphQL">
     ```
     query FetchCheckRequest {
-        fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+        fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
             identity {
                 list {
                     passportNumber
@@ -52,7 +52,7 @@ description: "The most popular check element, digitally verifies the applicantâ€
          -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
          -d '{
            "query": "query FetchCheckRequest { 
-             fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) { 
+             fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) { 
                identity { 
                  list { 
                    passportNumber 
@@ -91,7 +91,7 @@ description: "The most popular check element, digitally verifies the applicantâ€
          }' \
          https://api.hirepassconst fetchData = async () => {
       try {
-        const response = await fetch("https://api.sourcecompliant.com/applicant", {
+        const response = await fetch("https://api.hirepass.com/applicant", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -100,7 +100,7 @@ description: "The most popular check element, digitally verifies the applicantâ€
           body: JSON.stringify({
             query: `
               query FetchCheckRequest {
-                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   identity {
                     list {
                       passportNumber
@@ -170,7 +170,7 @@ description: "The most popular check element, digitally verifies the applicantâ€
           body: JSON.stringify({
             query: `
               query FetchCheckRequest {
-                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   identity {
                     list {
                       passportNumber

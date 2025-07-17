@@ -11,7 +11,7 @@ description: "Description of your new file."
          -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
          -d '{
            "query": "query FetchCheckRequest {
-              fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) {
+              fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) {
                 ukFcaRegistries {
                   list {
                     fileId
@@ -36,7 +36,7 @@ description: "Description of your new file."
               }
            }"
          }' \
-         https://api.sourcecompliant.com/applicant
+         https://api.hirepass.com/applicant
     
     ```
   </Tab>
@@ -47,7 +47,7 @@ description: "Description of your new file."
          -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
          -d '{
            "query": "query FetchCheckRequest {
-              fetchCheckRequest(where: { externalId: \"SCEXAMPLE\" }) {
+              fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) {
                 ukFcaRegistries {
                   list {
                     fileId
@@ -72,7 +72,7 @@ description: "Description of your new file."
               }
            }"
          }' \
-         https://api.sourcecompliant.com/applicant
+         https://api.hirepass.com/applicant
     
     ```
   </Tab>
@@ -80,7 +80,7 @@ description: "Description of your new file."
     ```javascript
     const fetchUkFcaRegistries = async () => {
       try {
-        const response = await fetch("https://api.sourcecompliant.com/applicant", {
+        const response = await fetch("https://api.hirepass.com/applicant", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -89,7 +89,7 @@ description: "Description of your new file."
           body: JSON.stringify({
             query: `
               query FetchCheckRequest {
-                fetchCheckRequest(where: { externalId: "SCEXAMPLE" }) {
+                fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   ukFcaRegistries {
                     list {
                       fileId
