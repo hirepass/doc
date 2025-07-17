@@ -1,11 +1,11 @@
 {
     "$schema": "https://mintlify.com/docs.json",
     "theme": "willow",
-    "name": "HirePass®",
+    "name": "HirePass",
     "colors": {
-        "primary": "#D0FFD2",
-        "light": "#D0FFD2",
-        "dark": "#D0FFD2"
+        "primary": "#54D25A",
+        "light": "#54D25A",
+        "dark": "#54D25A"
     },
     "favicon": "/favicon.ico",
     "navigation": {
