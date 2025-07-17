@@ -1,0 +1,81 @@
+---
+title: "Re-send a request"
+description: "Description of your new file."
+---
+
+If an applicant needs a reminder or has missed the initial communication, our system allows you to easily re-send notifications for compliance requests.
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+    mutation ResendCheckRequest {
+        resendCheckRequest(
+            requestUuid: "unique-request-uuid"
+        ) {
+            email
+            name
+        }
+    }
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+      -d '{
+        "query": "
+          mutation ResendCheckRequest {
+            resendCheckRequest(
+              requestUuid: \"unique-request-uuid\"
+            ) {
+              email
+              name
+            }
+          }
+        "
+      }' \
+      https://api.sourcecompliant.com/applicant
+    
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```
+    const resendCheckRequest = async () => {
+      try {
+        const response = await fetch("https://api.sourcecompliant.com/applicant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+          },
+          body: JSON.stringify({
+            query: `
+              mutation ResendCheckRequest {
+                resendCheckRequest(
+                  requestUuid: "unique-request-uuid"
+                ) {
+                  email
+                  name
+                }
+              }
+            `,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("Response data:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
+    // Call the function
+    resendCheckRequest();
+    ```
+  </Tab>
+</Tabs>

@@ -1,0 +1,81 @@
+---
+title: "View all check packages"
+description: "Description of your new file."
+---
+
+Before you begin managing requests, start by listing your existing check packages. This step will ensure that you're selecting the right set of checks for each applicant.
+
+#### Example
+
+You can retrieve all check packages from your organisation, using the following query.
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+    query AllCheckPackages {
+        allCheckPackages {
+            uuid
+            status
+            name
+            components
+        }
+    }
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST \
+         -H "Content-Type: application/json" \
+         -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+         -d '{
+           "query": "query AllCheckPackages { 
+             allCheckPackages { 
+               uuid 
+               status 
+               name 
+               components 
+             } 
+           }"
+         }' \
+         https://api.sourcecompliant.com/applicant
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```javascript
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.sourcecompliant.com/applicant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+          },
+          body: JSON.stringify({
+            query: `
+              query AllCheckPackages {
+                allCheckPackages {
+                  uuid
+                  status
+                  name
+                  components
+                }
+              }
+            `,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("Response data:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
+    fetchData();
+    ```
+  </Tab>
+</Tabs>

@@ -1,0 +1,101 @@
+---
+title: "View all requests"
+description: "Description of your new file."
+---
+
+Get a comprehensive view of all your ongoing and past requests in one place.
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+    query AllCheckRequests {
+        allCheckRequests(where: { hrPrimaryCode: "PACK_ONE" }) {
+            CheckPackage {
+                name
+            }
+            Applicant {
+                firstName
+                middleName
+                surname
+                email
+            }
+            uuid
+            createdAt
+        }
+    }
+    
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST \
+         -H "Content-Type: application/json" \
+         -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+         -d '{
+           "query": "query AllCheckRequests { 
+             allCheckRequests(where: { \"PACK_ONE\" }) { 
+               CheckPackage { 
+                 name 
+               } 
+               Applicant { 
+                 firstName 
+                 middleName 
+                 surname 
+                 email 
+               } 
+               uuid 
+               createdAt 
+             } 
+           }"
+         }' \
+         https://api.sourcecompliant.com/applicant
+    
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```javascript
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.hirepass.com/applicant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+          },
+          body: JSON.stringify({
+            query: `
+              query AllCheckRequests {
+                allCheckRequests(where: { hrPrimaryCode: "PACK_ONE" }) {
+                  CheckPackage {
+                    name
+                  }
+                  Applicant {
+                    firstName
+                    middleName
+                    surname
+                    email
+                  }
+                  uuid
+                  createdAt
+                }
+              }
+            `,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("Response data:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
+    // Call the function
+    fetchData();
+    ```
+  </Tab>
+</Tabs>

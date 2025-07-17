@@ -4,8 +4,8 @@
     "name": "HirePass",
     "colors": {
         "primary": "#2DC000",
-        "light": "#FFFFFF",
-        "dark": "#0F0F0F"
+        "light": "#2DC000",
+        "dark": "#2DC000"
     },
     "favicon": "/favicon.ico",
     "navigation": {

@@ -1,0 +1,158 @@
+---
+title: "Create a request"
+description: "Description of your new file."
+---
+
+### Sending your first request:
+
+When a request is created, our system automatically sends an email to the applicant, asking for their consent and any necessary information to begin the compliance checks.
+
+Each onboarding form is uniquely encrypted and tailored to the applicant, adapting dynamically to gather only the most relevant information based on the applicant's responses. Our intelligent form adapts in real-time, validating data on the spot to ensure accuracy and speed. By reducing errors and unnecessary questions, your compliance process becomes not only faster but also more secure and user-friendly.
+
+#### Primary Input fields:
+
+1. \*\*checkPackageUuid \*\*(required): Specifies the check package to be used for the request.
+2. **applicantComment** (optional): Provides guidance and supporting comments to the Applicant.
+3. \*\*firstName **(required)**/ middleName \*\* (optional) \*\*/ surname **(required)**: \*\*The applicant's name, separated into three main components.
+4. \*\*email \*\*(required): The applicant's contact email, where the request notification will be sent.
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+    mutation RequestACheck {
+            requestACheck(
+                    input: {
+                            CheckRequest: {
+                                    checkPackageUuid: "example-uuid"
+                                    applicantComment: "Valid comment"
+                                    jobTitle: "Engineer"
+                            }
+                            Applicant: {
+                                    firstName: "John"
+                                    middleName: "Michael"
+                                    surname: "Doe"
+                                    email: "example+applicant@email.com"
+                            }
+                    }
+            ) {
+                    uuid
+                    externalId
+                    checkPackageUuid
+                    organisationId
+                    createdAt
+            }
+     }
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST \
+         -H "Content-Type: application/json" \
+         -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+         -d '{
+           "query": "mutation RequestACheck { 
+             requestACheck(input: { 
+               CheckRequest: { 
+                 checkPackageUuid: \"example-uuid\", 
+                 hrPrimaryCode: \"HR-PACK-1\", 
+                 hrSecondaryCode: \"HR-PACK-2\", 
+                 applicantComment: \"Valid comment\" 
+               }, 
+               Applicant: { 
+                 firstName: \"John\", 
+                 middleName: \"Michael\", 
+                 surname: \"Doe\", 
+                 phoneNumber: \"447700900000\", 
+                 email: \"example+applicant@email.com\" 
+               } 
+             }) { 
+               uuid 
+               externalId 
+               checkPackageUuid 
+               organisationId 
+               requesterId 
+               applicantId 
+               hrPrimaryCode 
+               hrSecondaryCode 
+               createdAt 
+             } 
+           }"
+         }' \
+         https://api.sourcecompliant.com/applicant
+    
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```javascript
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.sourcecompliant.com/applicant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+          },
+          body: JSON.stringify({
+            query: `
+              mutation RequestACheck {
+                requestACheck(input: {
+                  CheckRequest: {
+                    checkPackageUuid: "example-uuid",
+                    hrPrimaryCode: "HR-PACK-1",
+                    hrSecondaryCode: "HR-PACK-2",
+                    applicantComment: "Valid comment"
+                  },
+                  Applicant: {
+                    firstName: "John",
+                    middleName: "Michael",
+                    surname: "Doe",
+                    phoneNumber: "447700900000",
+                    email: "example+applicant@email.com"
+                  }
+                }) {
+                  uuid
+                  externalId
+                  checkPackageUuid
+                  organisationId
+                  requesterId
+                  applicantId
+                  hrPrimaryCode
+                  hrSecondaryCode
+                  createdAt
+                }
+              }
+            `,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("Response data:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
+    // Call the function
+    fetchData();
+    
+    ```
+  </Tab>
+</Tabs>
+
+#### For packages containing a "Standard DBS" element (UK criminal check restricted to certain roles), the following additional fiends will also apply:
+
+1. **isANewHire** (required): If the applicant is a brand-new hire at your organisation.
+2. \*\*isApplyingForADifferentRole \*\*(required): If the applicant is a current employee of your organisation applying for a different role.
+3. \*\*isExistingRoleReCheck \*\*(required): If the applicant is a current employee of your organisation undergoing a DBS re-check while in their current position.
+
+#### For packages containing a "Enhanced DBS" element (UK criminal check restricted to certain roles), the following additional fiends will also apply:
+
+1. **workAtHomeAddress** (required): If this position involve working with individuals, whether children or adults, at the applicant's home address.
+2. \*\*workWithChildren \*\*(required): If the applicant is entitled to know whether this applicant is barred from working with children.
+3. \*\*workWithVulnerableAdult \*\*(required): If the applicant is entitled to know whether the applicant is barred from working with adults.
+
+For further guidance, visit [The three levels of Disclosure and Barring Service (DBS) checks](/o/JYWEf8noJAYpEY9XONdS/s/XqNcncLPbRfoQWzDqCVx/~/changes/8/guides/the-three-levels-of-disclosure-and-barring-service-dbs-checks)

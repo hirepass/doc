@@ -1,0 +1,69 @@
+---
+title: "Cancel a request"
+description: "Description of your new file."
+---
+
+Use `requestUuid` to locate the check request you wish to cancel.
+
+<Tabs>
+  <Tab title="GraphQL">
+    ```
+     mutation CancelCheckRequest {
+            cancelCheckRequest(requestUuid: "example-uuid") {
+              status
+            }
+          }
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST \
+         -H "Content-Type: application/json" \
+         -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
+         -d '{
+           "query": "mutation CancelCheckRequest { 
+                      cancelCheckRequest(requestUuid: \"example-uuid\") { 
+                        status 
+                        hrPrimaryCode 
+                        hrSecondaryCode 
+                      } 
+                    }"
+         }' \
+         https://api.sourcecompliant.com/applicant
+    ```
+  </Tab>
+  <Tab title="Javascript">
+    ```javascript
+    fetch("https://api.hirepass.com/applicant", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
+      },
+      body: JSON.stringify({
+        query: `
+          mutation CancelCheckRequest {
+            cancelCheckRequest(requestUuid: "example-uuid") {
+              status
+              hrPrimaryCode
+              hrSecondaryCode
+            }
+          }
+        `,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Response data:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    ```
+  </Tab>
+</Tabs>
