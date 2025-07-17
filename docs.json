@@ -3,9 +3,9 @@
     "theme": "willow",
     "name": "HirePass",
     "colors": {
-        "primary": "#2DC000",
-        "light": "#2DC000",
-        "dark": "#2DC000"
+        "primary": "#D0FFD2",
+        "light": "#D0FFD2",
+        "dark": "#D0FFD2"
     },
     "favicon": "/favicon.ico",
     "navigation": {
