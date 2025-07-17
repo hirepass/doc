@@ -1,95 +1,71 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "willow",
-  "name": "HirePass",
-  "colors": {    
-    "primary": "#FFEFC7",
-    "light": "#FFFFFF",
-    "dark": "#FFFFFF"
-  },
-  "favicon": "/favicon.ico",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "willow",
+    "name": "HirePass",
+    "colors": {
+        "primary": "#2DC000",
+        "light": "#2DC000",
+        "dark": "#2DC000"
+    },
+    "favicon": "/favicon.ico",
+    "navigation": {
+        "tabs": [
+            {
+                "tab": "Documentation",
+                "groups": [
+                      {
+                        "group": "INTRODUCTION",
+                        "pages": [
+                            "introduction"
+                        ]
+                    },
+                    {
+                        "group": "ENVIRONMENTS",
+                        "pages": [
+                            "environments/stage",
+                            "environments/producion"
+                        ]
+                    },
+                    {
+                        "group": "GRAPHQL API",
+                        "pages": [
+                            "graphql/working-with-the-graphql-api",
+                            "graphql/api-authentication-key"
+                        ]
+                    },
+                    {
+                        "group": "WEBHOOKS",
+                        "pages": [
+                            "webhooks/working-with-webhooks",
+                            "webhooks/create-a-new-webhook"
+                        ]
+                    }
+                ]
+            }
         ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+    },
+    "logo": {
+        "light": "/logo/light.png",
+        "dark": "/logo/dark.png"
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Support",
+                "href": "mailto:trust@hirepass.com"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "Dashboard",
+            "href": "https://workspace.hirepass.com"
         }
-      ]
+    },
+    "footer": {
+        "socials": {
+            "x": "https://x.com/hirepass",
+            "github": "https://github.com/hirepass",
+            "linkedin": "https://linkedin.com/company/hirepassltd"
+        }
     }
-  },
-  "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:trust@hirepass.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://workspace.hirepass.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/hirepass",
-      "github": "https://github.com/hirepass",
-      "linkedin": "https://linkedin.com/company/hirepassltd"
-    }
-  }
 }
