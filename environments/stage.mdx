@@ -1,5 +1,16 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Stage"
 ---
 
+The Stage environment is your testing ground. It’s designed for trying out new configurations, running test scenarios, and ensuring everything works as expected before moving to production. This environment mirrors the production setup but operates in a safe space where changes won’t affect your live data or operations.
+
+- **Purpose**: Test and validate changes without impacting live data.
+- **Use cases**: Trial new check packages, test API integrations, validate webhook setups, and troubleshoot issues.
+- **Safe zone**: No real data is processed, allowing you to experiment freely.
+- **Access**: Generally accessible to developers, testers, and other team members who need to validate changes.
+
+### Best practices for using environments:
+
+1. **Test in Stage first**: Always use the Stage environment to test new features, check packages, or changes before deploying them to Production.
+2. **Monitor performance**: Regularly monitor both environments to catch any discrepancies early.
+3. **Control access**: Ensure that access to the Production environment is restricted to authorised users only to maintain security and compliance.

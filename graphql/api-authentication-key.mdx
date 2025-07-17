@@ -1,0 +1,41 @@
+---
+title: "API authentication key"
+description: "Before you can start pulling compliance data or tracking statuses, you’ll need to authenticate your requests. Don’t worry, it’s a simple process."
+---
+
+### Obtaining your HirePass API key:
+
+1. Log in to your [HirePass](https://workspace.hirepass.com) account.
+2. Navigate to the **Apps** section.
+3. Select **API** from the menu.
+4. Click **Create new API key**. This key will be used to validate incoming API requests.
+   - **Label**: Enter a label for your API, such as “HRIS integration” or "Applicant screening".
+   - Click **Create new API key** to generate a new key.
+
+   #### Example
+   - **Label**: `My HRIS integration`
+
+![https___content.gitbook.com_content_XqNcncLPbRfoQWzDqCVx_blobs_GavaOgF8Af0CFinrmori_Screenshot_202024-12-17_20at_2017.16.41.avif](/images/https___content.gitbook.com_content_XqNcncLPbRfoQWzDqCVx_blobs_GavaOgF8Af0CFinrmori_Screenshot_202024-12-17_20at_2017.16.41.avif)
+
+### Using the API key:
+
+The API Key obtained from HirePass must be included in the headers of each API request you make. This key authenticates the request and verifies that it is coming from an authorised source.
+
+### Testing the API connection:
+
+This step is essential to verify that your GraphQL integration with HirePass is set up correctly.
+
+1. **Set up your test environment** Use a test environment using the [GraphQL playground.](https://studio.apollographql.com/public/SourceCompliant/variant/current/home)
+2. **Use a simple GraphQL query** Start with a basic query to test the connection, such as retrieving your check poackages.
+3. **Verify the response** Check for a successful response status and ensure the data returned matches your expectations.
+
+**Example**
+
+```
+##
+```
+
+### Security reminder.
+
+- **Keep you key secure**: Do not share this key publicly or expose it in your code repositories.
+- **Rotate keys regularly**: Regularly rotate your key to enhance security and update your validation logic accordingly.
