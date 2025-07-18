@@ -2,3 +2,52 @@
 title: "The three levels of Disclosure and Barring Service (DBS) checks"
 description: "The DBS lets UK employers know if someone has a criminal record or if they’re on a list of people who aren’t allowed to work with children or vulnerable adults."
 ---
+
+### **What is GraphQL?**
+
+GraphQL is a flexible query language for APIs, giving you precise control over what data you retrieve from a server. Unlike traditional REST APIs where you hit different endpoints for different data, GraphQL lets you fetch exactly what you want in one request. Nothing more, nothing less.
+
+---
+
+### **Why use GraphQL**:
+
+- **Efficiency**: Ask for only the data you need.
+- **Flexibility**: Fetch multiple related resources in a single request.
+- **Ease of Use**: Simple, intuitive queries that return predictable results.
+
+If you’re new to GraphQL, we recommend checking out this great beginner-friendly resource:
+
+- [The Official GraphQL documentation](https://graphql.org)
+
+Now, let’s get into how to use it with HirePass\!
+
+---
+
+### **How GraphQL queries work** (a quick primer):
+
+Once your account has been [authenticated](/graphql/api-authentication-key), it’s time to build your first GraphQL query\!
+
+Here’s how a basic query is structured:
+
+#### **Basic GraphQL query structure**:
+
+1. **Starting with a query or mutation keyword**: Queries fetch data; mutations modify it.
+2. **Specifying the fields you want**: You choose which fields to return, cutting down on unnecessary data.
+3. **Sending a request**: The API will return just the data you asked for.
+
+**Example**
+
+```
+//
+```
+
+In this example:
+
+- We're asking for all check requests from your organisation.
+- We're requesting specific fields: `uuid`, `externalId`, `progressStatus`, and the associated applicant's `completeName`.
+
+---
+
+## **Try it yourself.**
+
+Ready to get started? Head over [API key](/graphql/api-authentication-key) for your credentials and then to the [GraphQL playground](https://graphql.hirepass.com) where you can write and test queries in real time.
