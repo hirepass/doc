@@ -75,25 +75,31 @@
                                     "results/criminal",
                                     "results/financial",
                                     {
-                                      "group": "Directorships",
-                                      "pages": [
-                                        "results/directorships-uk"
-                                      ]
+                                        "group": "Directorships",
+                                        "pages": [
+                                            "results/directorships-uk"
+                                        ]
                                     },
                                     "results/global-sanctions",
                                     "results/financial-conduct-authority-registry",
-                                    "results/social-media-footprint",{
-                                      "group": "Directorships",
-                                      "pages": [
-                                        "results/employment-and-professional-history-reference",
-                                        "results/employment-and-professional-history-fca"
-                                        
-                                      ]
+                                    "results/social-media-footprint",
+                                    {
+                                        "group": "Employment and professional history",
+                                        "pages": [
+                                            "results/employment-and-professional-history-reference",
+                                            "results/employment-and-professional-history-fca"
+                                        ]
                                     },
                                     "results/professional-certification",
                                     "results/onboarding-form"
                                 ]
                             }
+                        ]
+                    },
+                    {
+                        "group": "GUIDES",
+                        "pages": [
+                            "guides/three-levels-of-dbs"
                         ]
                     }
                 ]

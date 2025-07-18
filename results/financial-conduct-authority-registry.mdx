@@ -6,12 +6,7 @@ description: "Description of your new file."
 <Tabs>
   <Tab title="GraphQL">
     ```
-    curl -X POST \
-         -H "Content-Type: application/json" \
-         -H "Authorization: Bearer YOUR_PUBLIC_API_TOKEN" \
-         -d '{
-           "query": "query FetchCheckRequest {
-              fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) {
+   fetchCheckRequest(where: { externalId: \"HPEXAMPLE\" }) {
                 ukFcaRegistries {
                   list {
                     fileId
@@ -34,11 +29,7 @@ description: "Description of your new file."
                   }
                 }
               }
-           }"
-         }' \
-         https://api.hirepass.com/applicant
-    
-    ```
+               ```
   </Tab>
   <Tab title="cURL">
     ```bash

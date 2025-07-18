@@ -5,17 +5,7 @@ title: "United Kingdom"
 <Tabs>
   <Tab title="GraphQL">
     ```
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://api.hirepass.com/applicant", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer YOUR_PUBLIC_API_TOKEN",
-          },
-          body: JSON.stringify({
-            query: `
-              query FetchCheckRequest {
+   query FetchCheckRequest {
                 fetchCheckRequest(where: { externalId: "HPEXAMPLE" }) {
                   directorships {
                     list {
@@ -39,23 +29,6 @@ title: "United Kingdom"
                   }
                 }
               }
-            `,
-          }),
-        });
-    
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    
-        const data = await response.json();
-        console.log("Response data:", data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-    
-    // Call the function
-    fetchData();
     
     ```
   </Tab>
