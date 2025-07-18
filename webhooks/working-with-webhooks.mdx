@@ -29,8 +29,18 @@ Webhook notifications are sent as JSON payloads to your specified URL. These pay
 
 **Example**
 
-```
-//
+```json
+{
+   "event":"REQUESTED",
+   "data":{
+      "externalId":"SC0000000000000",
+      "status":"requested",
+      "personalData":{
+         "completeName":"John Doe",
+         "email":"john@email.com"
+      }
+   }
+}
 ```
 
 **In this example:**

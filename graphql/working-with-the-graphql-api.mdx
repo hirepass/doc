@@ -34,7 +34,17 @@ Here’s how a basic query is structured:
 **Example**
 
 ```
-//
+query AllCheckRequests {
+    allCheckRequests {
+        uuid
+        externalId
+        progressStatus
+        
+        Applicant {
+            completeName
+        }
+    }
+}
 ```
 
 In this example:
