@@ -3,51 +3,21 @@ title: "The three levels of Disclosure and Barring Service (DBS) checks"
 description: "The DBS lets UK employers know if someone has a criminal record or if they’re on a list of people who aren’t allowed to work with children or vulnerable adults."
 ---
 
-### **What is GraphQL?**
+## Understanding the different DBS levels:
 
-GraphQL is a flexible query language for APIs, giving you precise control over what data you retrieve from a server. Unlike traditional REST APIs where you hit different endpoints for different data, GraphQL lets you fetch exactly what you want in one request. Nothing more, nothing less.
+### 1. DBS Basic:
 
----
+- Contains details of any unspent criminal convictions or conditional cautions the applicant has.
+- Applicable to all job roles — most applicants should use this level.
 
-### **Why use GraphQL**:
+### 2. DBS Standard:
 
-- **Efficiency**: Ask for only the data you need.
-- **Flexibility**: Fetch multiple related resources in a single request.
-- **Ease of Use**: Simple, intuitive queries that return predictable results.
+- Includes details of both spent and unspent criminal convictions, cautions, reprimands, and warnings from the Police National Computer (PNC).
+- Suitable for positions of responsibility such as accountancy or legal professionals.
 
-If you’re new to GraphQL, we recommend checking out this great beginner-friendly resource:
+### 3. DBS Enhanced:
 
-- [The Official GraphQL documentation](https://graphql.org)
+- Contains the same information as the Standard DBS check, plus any additional information held by local police that is considered relevant to the role being applied for.
+- Essential for roles that involve working with vulnerable groups, including children, such as teaching and healthcare roles.
 
-Now, let’s get into how to use it with HirePass\!
-
----
-
-### **How GraphQL queries work** (a quick primer):
-
-Once your account has been [authenticated](/graphql/api-authentication-key), it’s time to build your first GraphQL query\!
-
-Here’s how a basic query is structured:
-
-#### **Basic GraphQL query structure**:
-
-1. **Starting with a query or mutation keyword**: Queries fetch data; mutations modify it.
-2. **Specifying the fields you want**: You choose which fields to return, cutting down on unnecessary data.
-3. **Sending a request**: The API will return just the data you asked for.
-
-**Example**
-
-```
-//
-```
-
-In this example:
-
-- We're asking for all check requests from your organisation.
-- We're requesting specific fields: `uuid`, `externalId`, `progressStatus`, and the associated applicant's `completeName`.
-
----
-
-## **Try it yourself.**
-
-Ready to get started? Head over [API key](/graphql/api-authentication-key) for your credentials and then to the [GraphQL playground](https://graphql.hirepass.com) where you can write and test queries in real time.
+**Please visit the **[**DBS eligibility tool**](https://www.gov.uk/find-out-dbs-check)** or speak with our account management team for further clarification **[**support@hirepass.com**](mailto:support@hirepass.com)**.**
