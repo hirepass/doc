@@ -53,15 +53,12 @@ Each onboarding form is uniquely encrypted and tailored to the applicant, adapti
              requestACheck(input: { 
                CheckRequest: { 
                  checkPackageUuid: \"example-uuid\", 
-                 hrPrimaryCode: \"HR-PACK-1\", 
-                 hrSecondaryCode: \"HR-PACK-2\", 
                  applicantComment: \"Valid comment\" 
                }, 
                Applicant: { 
                  firstName: \"John\", 
                  middleName: \"Michael\", 
                  surname: \"Doe\", 
-                 phoneNumber: \"447700900000\", 
                  email: \"example+applicant@email.com\" 
                } 
              }) { 
@@ -71,8 +68,6 @@ Each onboarding form is uniquely encrypted and tailored to the applicant, adapti
                organisationId 
                requesterId 
                applicantId 
-               hrPrimaryCode 
-               hrSecondaryCode 
                createdAt 
              } 
            }"
@@ -97,15 +92,12 @@ Each onboarding form is uniquely encrypted and tailored to the applicant, adapti
                 requestACheck(input: {
                   CheckRequest: {
                     checkPackageUuid: "example-uuid",
-                    hrPrimaryCode: "HR-PACK-1",
-                    hrSecondaryCode: "HR-PACK-2",
                     applicantComment: "Valid comment"
                   },
                   Applicant: {
                     firstName: "John",
                     middleName: "Michael",
                     surname: "Doe",
-                    phoneNumber: "447700900000",
                     email: "example+applicant@email.com"
                   }
                 }) {
@@ -115,8 +107,6 @@ Each onboarding form is uniquely encrypted and tailored to the applicant, adapti
                   organisationId
                   requesterId
                   applicantId
-                  hrPrimaryCode
-                  hrSecondaryCode
                   createdAt
                 }
               }

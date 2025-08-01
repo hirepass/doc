@@ -8,7 +8,7 @@ Get a comprehensive view of all your ongoing and past requests in one place.
   <Tab title="GraphQL">
     ```
     query AllCheckRequests {
-        allCheckRequests(where: { hrPrimaryCode: "PACK_ONE" }) {
+        allCheckRequests {
             CheckPackage {
                 name
             }
@@ -64,7 +64,7 @@ Get a comprehensive view of all your ongoing and past requests in one place.
           body: JSON.stringify({
             query: `
               query AllCheckRequests {
-                allCheckRequests(where: { hrPrimaryCode: "PACK_ONE" }) {
+                allCheckRequests {
                   CheckPackage {
                     name
                   }

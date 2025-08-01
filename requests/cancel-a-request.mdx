@@ -23,8 +23,6 @@ Use `requestUuid` to locate the check request you wish to cancel.
            "query": "mutation CancelCheckRequest { 
                       cancelCheckRequest(requestUuid: \"example-uuid\") { 
                         status 
-                        hrPrimaryCode 
-                        hrSecondaryCode 
                       } 
                     }"
          }' \
@@ -44,8 +42,6 @@ Use `requestUuid` to locate the check request you wish to cancel.
           mutation CancelCheckRequest {
             cancelCheckRequest(requestUuid: "example-uuid") {
               status
-              hrPrimaryCode
-              hrSecondaryCode
             }
           }
         `,
